@@ -10,10 +10,10 @@ import ThemeToggle from "./ThemeToggle.astro";
     <a href="/posts"> posts </a>
   </nav>
   <div class="flex items-center gap-4">
-    <a href={LINKEDIN_URL}>
+    <a href={LINKEDIN_URL} aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
       <Icon name="meteor-icons:linkedin" />
     </a>
-    <a href={GITHUB_URL}>
+    <a href={GITHUB_URL} aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
       <Icon name="meteor-icons:github" />
     </a>
     <ThemeToggle />
