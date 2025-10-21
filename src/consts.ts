@@ -12,5 +12,3 @@ const CONFIGURED_BASE_URL = import.meta.env.BASE_URL;
 
 export const BASE_URL =
   CONFIGURED_BASE_URL === "/" ? CONFIGURED_BASE_URL : CONFIGURED_BASE_URL + "/";
-
-console.log({ BASE_URL });
