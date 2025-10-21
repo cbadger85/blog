@@ -7,3 +7,10 @@ export const SITE_DESCRIPTION = "A tech blog for Charles Badger.";
 
 export const LINKEDIN_URL = "https://www.linkedin.com/in/charles-badger/";
 export const GITHUB_URL = "https://github.com/cbadger85/";
+
+const CONFIGURED_BASE_URL = import.meta.env.BASE_URL;
+
+export const BASE_URL =
+  CONFIGURED_BASE_URL === "/" ? CONFIGURED_BASE_URL : CONFIGURED_BASE_URL + "/";
+
+console.log({ BASE_URL });

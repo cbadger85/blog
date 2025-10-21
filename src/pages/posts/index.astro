@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
+import { BASE_URL, SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 import Layout from "../../layouts/Layout.astro";
 import { formatDate } from "../../lib/utils";
 
@@ -8,8 +8,6 @@ const collection = await getCollection("posts");
 const posts = collection.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -19,7 +17,7 @@ const base = import.meta.env.BASE_URL;
         posts.map((post) => (
           <li>
             <a
-              href={`${base}/posts/${post.slug}`}
+              href={BASE_URL + "posts/" + post.slug}
               class="group flex justify-between gap-3"
             >
               <span class="group-hover:underline">{post.data.title}</span>
