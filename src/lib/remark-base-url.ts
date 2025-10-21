@@ -1,14 +1,15 @@
+import type { RemarkPlugin } from "@astrojs/markdown-remark";
 import { visit } from "unist-util-visit";
 
 const base = import.meta.env.BASE_URL;
 
-export function remarkBaseUrl() {
+export const remarkBaseUrl: RemarkPlugin = () => {
   return (tree) => {
     visit(tree, "image", (node) => {
       // Only modify absolute paths that start with /
       if (node.url && node.url.startsWith("/") && !node.url.startsWith("//")) {
-        node.url = (base.startsWith("/") ? base.slice(1) : base) + node.url;
+        node.url = base + node.url.slice(1);
       }
     });
   };
-}
+};
