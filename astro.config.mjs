@@ -18,8 +18,8 @@ export default defineConfig({
     remarkPlugins: [remarkBaseUrl],
     shikiConfig: {
       themes: {
-        light: "catppuccin-latte",
-        dark: "catppuccin-mocha",
+        light: "snazzy-light",
+        dark: "vitesse-dark",
       },
     },
   },
