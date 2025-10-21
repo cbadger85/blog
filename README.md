@@ -1,14 +1,14 @@
 # My Personal Blog
 
-Migrated my content (one post, ha!) from Gatsby to Astro. I'm using the [miniblog theme](https://github.com/nicholasdly/miniblog).
+Migrated my content (one post, ha!) from Gatsby to Astro. I'm using a forked version of the [miniblog theme](https://github.com/nicholasdly/miniblog).
 
 ## Getting Started
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/[YOUR_USERNAME]/[YOUR_REPO_NAME].git
-cd [YOUR_REPO_NAME]
+https://github.com/cbadger85/personal-blog.git
+cd [personal-blog]
 ```
 
 2. Install dependencies:
