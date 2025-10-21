@@ -1,14 +1,13 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Header from "../components/Header.astro";
-import { cn } from "../lib/utils";
 import "../styles/global.css";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
-  className?: string;
+  centered?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -17,7 +16,7 @@ const {
   title,
   description,
   image = "/static/blog-placeholder.png",
-  className,
+  centered = false,
 } = Astro.props;
 ---
 
@@ -26,7 +25,7 @@ const {
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Font preloads -->
@@ -67,13 +66,15 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body
-    class="font-sans text-zinc-900 antialiased transition-colors dark:bg-zinc-900 dark:text-zinc-200"
+    class={`font-sans text-zinc-900 antialiased transition-colors dark:bg-zinc-900 dark:text-zinc-200 ${centered ? "min-h-screen flex flex-col" : ""}`}
   >
-    <div class={cn("max-w-xl mx-auto p-4", className)}>
-      <Header />
+    <Header />
+    <div
+      class={`mx-auto max-w-xl p-4 ${centered ? "flex-1 flex items-center" : ""}`}
+    >
       <slot />
     </div>
   </body>
