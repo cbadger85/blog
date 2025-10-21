@@ -13,6 +13,7 @@ import { remarkBaseUrl } from "./src/lib/remark-base-url.ts";
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
+  base: process.env.NODE_ENV === "production" ? "/blog" : "/",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
   markdown: {
     remarkPlugins: [remarkBaseUrl],
