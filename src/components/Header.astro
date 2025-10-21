@@ -9,13 +9,23 @@ const base = import.meta.env.BASE_URL;
 <header class="mx-4 mb-6 mt-2 flex items-center justify-between">
   <nav class="flex items-center gap-4">
     <a href={base}> home </a>
-    <a href={`${base}posts`}> posts </a>
+    <a href={`${base}/posts`}> posts </a>
   </nav>
   <div class="flex items-center gap-4">
-    <a href={LINKEDIN_URL} aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
+    <a
+      href={LINKEDIN_URL}
+      aria-label="Visit my LinkedIn profile"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Icon name="meteor-icons:linkedin" />
     </a>
-    <a href={GITHUB_URL} aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
+    <a
+      href={GITHUB_URL}
+      aria-label="Visit my GitHub profile"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <Icon name="meteor-icons:github" />
     </a>
     <ThemeToggle />

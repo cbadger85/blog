@@ -12,7 +12,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
-  base: process.env.NODE_ENV === "production" ? "/blog" : "/",
+  // base: process.env.NODE_ENV === "production" ? "/blog" : "/",
   integrations: [mdx(), sitemap(), tailwind(), icon()],
   markdown: {
     shikiConfig: {
