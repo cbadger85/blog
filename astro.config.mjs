@@ -8,12 +8,14 @@ import tailwind from "@astrojs/tailwind";
 import { SITE_URL } from "./src/consts";
 
 import icon from "astro-icon";
+import { remarkBaseUrl } from "./src/lib/remark-base-url.mjs";
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
   integrations: [mdx(), sitemap(), tailwind(), icon()],
   markdown: {
+    remarkPlugins: [remarkBaseUrl],
     shikiConfig: {
       themes: {
         light: "catppuccin-latte",
