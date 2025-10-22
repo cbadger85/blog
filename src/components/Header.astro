@@ -5,13 +5,13 @@ import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header
-  class="sticky top-0 z-50 mx-4 mb-6 flex items-center justify-between bg-white bg-opacity-90 py-2 backdrop-blur-sm dark:bg-zinc-900 dark:bg-opacity-90"
+  class="sticky top-0 z-50 mb-6 flex items-center justify-between bg-white bg-opacity-90 px-4 py-2 backdrop-blur-sm dark:bg-zinc-900 dark:bg-opacity-90"
 >
-  <nav class="flex items-center gap-4">
+  <nav class="flex items-center gap-2 sm:gap-4">
     <a href={BASE_URL}> home </a>
     <a href={BASE_URL + "posts"}> posts </a>
   </nav>
-  <div class="flex items-center gap-4">
+  <div class="flex shrink-0 items-center gap-2 sm:gap-4">
     <a
       href={LINKEDIN_URL}
       aria-label="Visit my LinkedIn profile"

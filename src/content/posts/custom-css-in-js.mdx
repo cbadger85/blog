@@ -210,7 +210,17 @@ const className = makeStyles`
  `;
 ```
 
-When calling the `makeStyles` function, styles equals `['background-color: ', '; width: 200px; height: 50px;']` and values equals `['blue']`
+When calling the `makeStyles` function, styles equals
+
+```js
+["background-color: ", "; width: 200px; height: 50px;"];
+```
+
+and values equals
+
+```js
+["blue"];
+```
 
 Then we generate our unique class name:
 
@@ -224,7 +234,17 @@ and use the `zipArray` function to zip our input arguments together.
 const styleBlock = zipArray(styles, values).join("");
 ```
 
-This gives is an array that looks like `['background-color: ', 'blue', '; width: 200px; height: 50px;']` that we join with an empty string giving us `'background-color: blue; width: 200px; height: 50px;'`
+This gives is an array that looks like
+
+```js
+["background-color: ", "blue", "; width: 200px; height: 50px;"];
+```
+
+that we join with an empty string giving us
+
+```js
+"background-color: blue; width: 200px; height: 50px;";
+```
 
 ```js
 const styleContent = `
@@ -233,12 +253,11 @@ const styleContent = `
   }
   `;
 
-const styleEl = document.createElement('style');
+const styleEl = document.createElement("style");
 styleEl.textContent = styleContent;
 document.head.appendChild(styleEl);
 
 return className;
-};
 ```
 
 We use this function to build a valid CSS style block, attach it to the DOM and return the className so we can use it in our component like this:
